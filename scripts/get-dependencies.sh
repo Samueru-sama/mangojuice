@@ -26,7 +26,6 @@ echo "---------------------------------------------------------------"
 meson setup build-appimage --prefix=/usr
 meson compile -C build-appimage
 meson install -C build-appimage
-gtk-update-icon-cache -f -t /usr/share/icons/hicolor
 
 meson introspect --projectinfo build-appimage | python3 -c \
 	'import json, sys; print(json.load(sys.stdin)["version"])' > ~/version
